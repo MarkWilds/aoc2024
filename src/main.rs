@@ -1,8 +1,8 @@
 mod uneven_even_element_iterator;
-mod puzzleOne;
+mod puzzle_one;
 mod puzzle_two;
 
-use puzzleOne::*;
+use puzzle_one::*;
 use puzzle_two::*;
 
 fn main() {
