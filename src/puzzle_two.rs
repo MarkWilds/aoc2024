@@ -35,8 +35,11 @@ fn is_safe(report: Vec<i32>, tolerate_one_bad_level: bool) -> bool {
         return if tolerate_one_bad_level {
             let count = report.len() as i32;
             let i = index as i32;
-            (i-1..=i+1)
-                .filter(|&i| i >= 0 && i < count)
+
+            let mut valid_indices = (i-1..=i+1)
+                .filter(|&i| i >= 0 && i < count);
+
+            valid_indices
                 .any(|index| {
                     let mut sub_report = report.clone();
                     sub_report.remove(index as usize);
